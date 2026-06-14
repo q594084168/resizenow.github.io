@@ -773,11 +773,16 @@ footer a{{color:#CBD5E1;text-decoration:none}}
                 </div>
             </div>
         </section>
+        <div class="container" style="max-width:700px;margin:0 auto 40px;padding:0 24px">
+            <div class="size-table" style="background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center">
+                <h2 style="font-size:1.1rem;margin-bottom:12px;color:var(--primary)">📐 Key Dimensions</h2>
+                {size_table}
+            </div>
+        </div>
         <section class="section">
             <div class="container">
                 <h2>About {content.get('name', '')} Image Sizes</h2>
                 <p>{content.get('about', '')}</p>
-                {size_table}
                 <h2>How to Resize</h2>
                 {how_to_html}
                 <h2>Tips</h2>
@@ -857,8 +862,8 @@ footer a{{color:#CBD5E1;text-decoration:none}}
 
 
 def build_home():
-    # Platform cards
-    platform_cards = ""
+    # Platform chips (inline, compact)
+    platform_cards_inline = ""
     for slug, name in [
         ("resize-image-for-instagram", "Instagram"),
         ("resize-image-for-tiktok", "TikTok"),
@@ -870,13 +875,25 @@ def build_home():
         ("resize-image-for-pinterest", "Pinterest"),
         ("resize-image-for-whatsapp", "WhatsApp"),
     ]:
-        platform_cards += f'<a href="/{slug}/" class="card">{name}</a>'
+        platform_cards_inline += f'<a href="/{slug}/" class="chip">{name}</a>'
 
-    # Popular preset cards
-    preset_cards = ""
+    # Popular preset cards (compact 2-col)
+    preset_cards_compact = ""
     for pid in ["instagram-story", "tiktok-video", "youtube-thumbnail", "discord-avatar", "linkedin-banner", "facebook-cover"]:
         p = PRESETS[pid]
-        preset_cards += f'<a href="/resize-image-for-{p["platform"].lower()}/" class="card">{p["name"]}<br><small style="color:var(--text-secondary)">{p["width"]}x{p["height"]}</small></a>'
+        preset_cards_compact += f'<a href="/resize-image-for-{p["platform"].lower()}/" class="size-chip"><strong>{p["name"]}</strong><span>{p["width"]}×{p["height"]}</span></a>'
+
+    # More tools (compact list)
+    more_tools_compact = ""
+    for slug, title in [
+        ("social-media-image-dimensions", "📐 All Dimensions"),
+        ("resize-image-for-printing", "🖨 Print Ready"),
+        ("change-image-resolution", "🔍 Resolution"),
+        ("image-size-guide", "📖 Size Guide"),
+        ("resize-jpg-online", "🖼 JPG Resizer"),
+        ("bulk-image-resizer", "📦 Bulk Resize"),
+    ]:
+        more_tools_compact += f'<a href="/{slug}/" class="tool-link">{title}</a>'
 
     # Preset options for homepage
     preset_options = ""
@@ -934,6 +951,14 @@ header nav{{display:flex;gap:24px}}header nav a{{color:#94A3B8;text-decoration:n
 .faq-item p{{color:var(--text-secondary);font-size:.9rem}}
 .cross-site{{max-width:700px;margin:0 auto 40px;padding:20px;background:#F5F0FF;border-left:3px solid var(--primary);border-radius:0 var(--radius-sm) var(--radius-sm) 0}}
 .cross-site strong{{color:var(--primary)}}.cross-site a{{color:var(--primary);font-weight:600}}
+.chip{{display:inline-block;padding:6px 14px;background:var(--card-bg);border:1px solid var(--border);border-radius:20px;font-size:.85rem;font-weight:500;color:var(--text);text-decoration:none;transition:all .15s}}
+.chip:hover{{border-color:var(--primary);background:#F5F3FF;color:var(--primary)}}
+.size-chip{{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-sm);text-decoration:none;color:var(--text);font-size:.85rem;transition:all .15s}}
+.size-chip:hover{{border-color:var(--primary);box-shadow:0 2px 8px rgba(79,70,229,.08)}}
+.size-chip strong{{font-weight:600}}.size-chip span{{color:var(--text-secondary);font-size:.8rem}}
+.tool-link{{display:block;padding:8px 12px;background:var(--card-bg);border:1px solid var(--border);border-radius:8px;font-size:.82rem;font-weight:500;color:var(--text);text-decoration:none;transition:all .15s}}
+.tool-link:hover{{border-color:var(--primary);background:#F5F3FF}}
+.bento{{padding:0 24px}}@media(max-width:640px){{.bento{{grid-template-columns:1fr!important}}.bento-section[style*="span 2"]{{grid-column:1/-1!important}}}}
 footer{{background:#1E293B;color:#94A3B8;padding:32px 0;text-align:center;font-size:.85rem}}
 footer a{{color:#CBD5E1;text-decoration:none}}
     </style>
@@ -1008,17 +1033,6 @@ footer a{{color:#CBD5E1;text-decoration:none}}
                 </div>
             </div>
         </section>
-        <div class="cross-site">
-            <strong>Pro Tip</strong> — Done resizing? Optimize file size with our <a href="https://compressnow.net">file optimizer</a>. Build a resume? <a href="https://cvbuild-ai.com">CVBuild-AI</a>. Write emails? <a href="https://messagegen-ai.com">MessageGen-AI</a>. Adjust tone? <a href="https://tonemodifier.com">ToneModifier</a>.
-        </div>
-        <section class="section">
-            <h2>Resize by Platform</h2>
-            <div class="grid">{platform_cards}</div>
-        </section>
-        <section class="section">
-            <h2>Popular Sizes</h2>
-            <div class="grid">{preset_cards}</div>
-        </section>
         <section class="section">
             <h2>How It Works</h2>
             <div class="steps">
@@ -1028,8 +1042,21 @@ footer a{{color:#CBD5E1;text-decoration:none}}
             </div>
         </section>
         <section class="section">
-            <h2>More Free Tools</h2>
-            <div class="grid"><a href="/social-media-image-dimensions/" class="card">All Image Dimensions<br><small style="color:var(--text-secondary)">2026 Guide</small></a><a href="/resize-image-for-printing/" class="card">Resize for Print<br><small style="color:var(--text-secondary)">300 DPI Ready</small></a><a href="/change-image-resolution/" class="card">Change Resolution<br><small style="color:var(--text-secondary)">DPI & PPI</small></a><a href="/image-size-guide/" class="card">Image Size Guide<br><small style="color:var(--text-secondary)">All Platforms</small></a><a href="/resize-jpg-online/" class="card">Resize JPG Online<br><small style="color:var(--text-secondary)">Format Specific</small></a><a href="/bulk-image-resizer/" class="card">Bulk Resizer<br><small style="color:var(--text-secondary)">Multiple Images</small></a></div>
+            <h2>Quick Access</h2>
+            <div class="bento" style="max-width:720px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+                <div class="bento-section" style="grid-column:1/-1;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:16px 20px">
+                    <h3 style="font-size:.85rem;font-weight:600;color:var(--primary);margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px">🎯 Resize by Platform</h3>
+                    <div style="display:flex;flex-wrap:wrap;gap:8px">{platform_cards_inline}</div>
+                </div>
+                <div class="bento-section" style="grid-column:span 2;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:16px 20px">
+                    <h3 style="font-size:.85rem;font-weight:600;color:var(--primary);margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px">🔥 Popular Sizes</h3>
+                    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">{preset_cards_compact}</div>
+                </div>
+                <div class="bento-section" style="background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:16px 20px">
+                    <h3 style="font-size:.85rem;font-weight:600;color:var(--primary);margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px">🛠 More</h3>
+                    <div style="display:flex;flex-direction:column;gap:6px">{more_tools_compact}</div>
+                </div>
+            </div>
         </section>
         <div class="cross-site">
             <strong>Pro Tip</strong> — Done resizing? Optimize file size with our <a href="https://compressnow.net">file optimizer</a>. Build a resume? <a href="https://cvbuild-ai.com">CVBuild-AI</a>. Write emails? <a href="https://messagegen-ai.com">MessageGen-AI</a>. Adjust tone? <a href="https://tonemodifier.com">ToneModifier</a>.
