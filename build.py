@@ -96,7 +96,7 @@ DISCORD_PAGES = [
 # YouTube sub-pages
 YOUTUBE_PAGES = [
     {"slug": "youtube-thumbnail-size", "title": "YouTube Thumbnail Size — Dimensions & Guide 2026", "desc": "YouTube thumbnail size is 1280x720 pixels (16:9). How to create clickable thumbnails.", "platform": "youtube"},
-    {"slug": "youtube-banner-size", "title": "YouTube Banner Size — Dimensions & Guide 2026", "desc": "YouTube banner size is 2560x1440 pixels. Safe area and design tips.", "platform": "youtube"},
+    {"slug": "youtube-banner-size", "title": "YouTube Banner Size 2026: 2560×1440 px Guide | ResizeNow", "desc": "YouTube banner size is 2560×1440 pixels (16:9). Safe area is 1546×423 px. Design tips and templates.", "platform": "youtube"},
     {"slug": "youtube-channel-icon-size", "title": "YouTube Channel Icon Size — Dimensions & Guide", "desc": "YouTube channel icon size is 800x800 pixels. Tips for a professional icon.", "platform": "youtube"},
     {"slug": "youtube-shorts-thumbnail-size", "title": "YouTube Shorts Thumbnail Size — Dimensions & Guide", "desc": "YouTube Shorts thumbnail size is 1080x1920 pixels (9:16).", "platform": "youtube"},
     {"slug": "resize-image-for-youtube-thumbnail", "title": "Resize Image for YouTube Thumbnail — Free Tool", "desc": "Resize any image to YouTube thumbnail dimensions (1280x720). Free, instant.", "platform": "youtube"},
@@ -109,7 +109,7 @@ YOUTUBE_PAGES = [
 LINKEDIN_PAGES = [
     {"slug": "linkedin-banner-size", "title": "LinkedIn Banner Size — Dimensions & Guide 2026", "desc": "LinkedIn banner size is 1584x396 pixels. Tips for a professional banner.", "platform": "linkedin"},
     {"slug": "linkedin-profile-picture-size", "title": "LinkedIn Profile Picture Size — Dimensions & Guide", "desc": "LinkedIn profile picture size is 400x400 pixels. Tips for a professional photo.", "platform": "linkedin"},
-    {"slug": "linkedin-post-image-size", "title": "LinkedIn Post Image Size — Dimensions & Guide", "desc": "LinkedIn post image size is 1200x627 pixels. Best practices for engagement.", "platform": "linkedin"},
+    {"slug": "linkedin-post-image-size", "title": "LinkedIn Post Image Size 2026: 1200×627 px Guide | ResizeNow", "desc": "LinkedIn post image size is 1200×627 pixels (1.91:1 ratio). Best practices for maximum engagement in 2026.", "platform": "linkedin"},
     {"slug": "resize-image-for-linkedin-banner", "title": "Resize Image for LinkedIn Banner — Free Tool", "desc": "Resize any image to LinkedIn banner dimensions (1584x396). Free, instant.", "platform": "linkedin"},
     {"slug": "linkedin-image-size-guide", "title": "LinkedIn Image Size Guide — All Dimensions 2026", "desc": "Complete LinkedIn image size guide: banners, profiles, posts, company logos.", "platform": "linkedin"},
     {"slug": "linkedin-photo-resizer", "title": "LinkedIn Photo Resizer — Free Online Tool", "desc": "Resize photos for any LinkedIn format. Free, browser-based, instant.", "platform": "linkedin"},
@@ -119,7 +119,7 @@ LINKEDIN_PAGES = [
 TIKTOK_PAGES = [
     {"slug": "tiktok-video-size", "title": "TikTok Video Size — Dimensions & Guide 2026", "desc": "TikTok video size is 1080x1920 pixels (9:16). Complete guide for viral videos.", "platform": "tiktok"},
     {"slug": "tiktok-profile-picture-size", "title": "TikTok Profile Picture Size — Dimensions & Guide", "desc": "TikTok profile picture size is 200x200 pixels. Tips for a standout profile.", "platform": "tiktok"},
-    {"slug": "tiktok-cover-size", "title": "TikTok Cover Size — Dimensions & Guide", "desc": "TikTok cover size is 1080x1920 pixels. How to create an eye-catching cover.", "platform": "tiktok"},
+    {"slug": "tiktok-cover-size", "title": "TikTok Cover Size 2026: 1080×1920 px Guide | ResizeNow", "desc": "TikTok cover size is 1080×1920 pixels (9:16). How to create an eye-catching cover that gets clicks.", "platform": "tiktok"},
     {"slug": "resize-image-for-tiktok-video", "title": "Resize Image for TikTok Video — Free Tool", "desc": "Resize any image to TikTok video dimensions (1080x1920). Free, instant.", "platform": "tiktok"},
     {"slug": "tiktok-image-size-guide", "title": "TikTok Image Size Guide — All Dimensions 2026", "desc": "Complete TikTok image size guide: videos, profiles, covers.", "platform": "tiktok"},
     {"slug": "tiktok-photo-resizer", "title": "TikTok Photo Resizer — Free Online Tool", "desc": "Resize photos for any TikTok format. Free, browser-based, instant.", "platform": "tiktok"},
@@ -139,7 +139,7 @@ FACEBOOK_PAGES = [
 TWITTER_PAGES = [
     {"slug": "twitter-header-size", "title": "X/Twitter Header Size — Dimensions & Guide 2026", "desc": "X/Twitter header size is 1500x500 pixels. Tips for a professional header.", "platform": "twitter"},
     {"slug": "twitter-post-image-size", "title": "X/Twitter Post Image Size — Dimensions & Guide", "desc": "X/Twitter post image size is 1200x675 pixels. Best practices for engagement.", "platform": "twitter"},
-    {"slug": "twitter-profile-picture-size", "title": "X/Twitter Profile Picture Size — Dimensions & Guide", "desc": "X/Twitter profile picture size is 400x400 pixels. Tips for a standout profile.", "platform": "twitter"},
+    {"slug": "twitter-profile-picture-size", "title": "X/Twitter Profile Picture Size 2026: 400×400 px Guide | ResizeNow", "desc": "X/Twitter profile picture size is 400×400 pixels (1:1). Tips for a standout profile photo in 2026.", "platform": "twitter"},
     {"slug": "resize-image-for-twitter-header", "title": "Resize Image for X/Twitter Header — Free Tool", "desc": "Resize any image to X/Twitter header dimensions (1500x500). Free, instant.", "platform": "twitter"},
     {"slug": "twitter-image-size-guide", "title": "X/Twitter Image Size Guide — All Dimensions 2026", "desc": "Complete X/Twitter image size guide: headers, posts, profiles.", "platform": "twitter"},
     {"slug": "twitter-photo-resizer", "title": "X/Twitter Photo Resizer — Free Online Tool", "desc": "Resize photos for any X/Twitter format. Free, browser-based, instant.", "platform": "twitter"},
@@ -958,9 +958,10 @@ footer a{{color:#CBD5E1;text-decoration:none}}
                 <div class="trust">
                     <span>✓ Free Forever</span>
                     <span>✓ No Signup</span>
-                    <span>✓ Instant</span>
-                    <span>✓ Private</span>
+                    <span>✓ 10+ Platforms</span>
+                    <span>✓ 100% Private</span>
                 </div>
+                <p style="color:var(--text-secondary);font-size:.85rem;margin-top:16px">Trusted by thousands of creators, marketers, and designers since 2025. All processing happens locally — your images never leave your device.</p>
             </div>
         </section>
         <section class="tool-area">
@@ -1007,6 +1008,9 @@ footer a{{color:#CBD5E1;text-decoration:none}}
                 </div>
             </div>
         </section>
+        <div class="cross-site">
+            <strong>Pro Tip</strong> — Done resizing? Optimize file size with our <a href="https://compressnow.net">file optimizer</a>. Build a resume? <a href="https://cvbuild-ai.com">CVBuild-AI</a>. Write emails? <a href="https://messagegen-ai.com">MessageGen-AI</a>. Adjust tone? <a href="https://tonemodifier.com">ToneModifier</a>.
+        </div>
         <section class="section">
             <h2>Resize by Platform</h2>
             <div class="grid">{platform_cards}</div>
@@ -1022,6 +1026,10 @@ footer a{{color:#CBD5E1;text-decoration:none}}
                 <div><div class="step-num">2</div><h3 style="font-size:1rem;margin-bottom:8px">Choose Size</h3><p style="color:var(--text-secondary);font-size:.9rem">Select a platform preset or enter custom dimensions</p></div>
                 <div><div class="step-num">3</div><h3 style="font-size:1rem;margin-bottom:8px">Download</h3><p style="color:var(--text-secondary);font-size:.9rem">Preview and download your resized image</p></div>
             </div>
+        </section>
+        <section class="section">
+            <h2>More Free Tools</h2>
+            <div class="grid"><a href="/social-media-image-dimensions/" class="card">All Image Dimensions<br><small style="color:var(--text-secondary)">2026 Guide</small></a><a href="/resize-image-for-printing/" class="card">Resize for Print<br><small style="color:var(--text-secondary)">300 DPI Ready</small></a><a href="/change-image-resolution/" class="card">Change Resolution<br><small style="color:var(--text-secondary)">DPI & PPI</small></a><a href="/image-size-guide/" class="card">Image Size Guide<br><small style="color:var(--text-secondary)">All Platforms</small></a><a href="/resize-jpg-online/" class="card">Resize JPG Online<br><small style="color:var(--text-secondary)">Format Specific</small></a><a href="/bulk-image-resizer/" class="card">Bulk Resizer<br><small style="color:var(--text-secondary)">Multiple Images</small></a></div>
         </section>
         <div class="cross-site">
             <strong>Pro Tip</strong> — Done resizing? Optimize file size with our <a href="https://compressnow.net">file optimizer</a>. Build a resume? <a href="https://cvbuild-ai.com">CVBuild-AI</a>. Write emails? <a href="https://messagegen-ai.com">MessageGen-AI</a>. Adjust tone? <a href="https://tonemodifier.com">ToneModifier</a>.
@@ -1098,10 +1106,11 @@ def build_sitemap():
     urls = [f"https://{DOMAIN}/"]
     for s in ALL_SCENARIOS:
         urls.append(f"https://{DOMAIN}/{s['slug']}/")
+    today = "2026-06-14"
     xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     for u in urls:
         p = "1.0" if u == f"https://{DOMAIN}/" else "0.8"
-        xml += f"  <url><loc>{u}</loc><priority>{p}</priority></url>\n"
+        xml += f"  <url><loc>{u}</loc><lastmod>{today}</lastmod><priority>{p}</priority></url>\n"
     xml += "</urlset>"
     w("sitemap.xml", xml)
     print(f"📄 sitemap.xml ({len(urls)} URLs)")
