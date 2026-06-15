@@ -610,12 +610,49 @@ def build_scene_page(s):
         faq_schema.append(f'{{"@type":"Question","name":"{q}","acceptedAnswer":{{"@type":"Answer","text":"{a}"}}}}')
     faq_schema_json = ",".join(faq_schema)
 
-    # Build size table if available
+    # Name → slug lookup for clickable size table
+    size_links = {}
+    for s2 in ALL_SCENARIOS:
+        t = s2["title"].split("—")[0].strip()
+        size_links[t.lower()] = s2["slug"]
+    # Also map common short names
+    _extra = {
+        "instagram post (square)": "instagram-post-size",
+        "instagram story / reel": "instagram-story-size",
+        "instagram story": "instagram-story-size",
+        "instagram profile": "instagram-profile-picture-size",
+        "facebook cover": "facebook-cover-size",
+        "facebook profile": "facebook-profile-picture-size",
+        "facebook post": "facebook-post-image-size",
+        "linkedin banner": "linkedin-banner-size",
+        "linkedin profile": "linkedin-profile-picture-size",
+        "linkedin post": "linkedin-post-image-size",
+        "x/twitter header": "twitter-header-size",
+        "x/twitter post": "twitter-post-image-size",
+        "twitter header": "twitter-header-size",
+        "twitter post": "twitter-post-image-size",
+        "youtube thumbnail": "youtube-thumbnail-size",
+        "youtube banner": "youtube-banner-size",
+        "tiktok video": "tiktok-video-size",
+        "pinterest pin": "pinterest-pin-size",
+        "discord avatar": "discord-avatar-size",
+        "discord banner": "discord-banner-size",
+        "email header": "image-resize-online",
+        "website hero banner": "image-resize-online",
+        "blog featured image": "image-resize-online",
+    }
+    size_links.update(_extra)
+
+    # Build size table if available — rows are clickable where we have a matching page
     size_table = ""
     if content.get("sizes"):
         rows = ""
         for name, dims, ratio in content["sizes"]:
-            rows += f"<tr><td>{name}</td><td>{dims}</td><td>{ratio}</td></tr>"
+            slug_match = size_links.get(name.lower())
+            if slug_match:
+                rows += f'<tr><td><a href="/{slug_match}/" class="size-link">{name}</a></td><td>{dims}</td><td>{ratio}</td></tr>'
+            else:
+                rows += f"<tr><td>{name}</td><td>{dims}</td><td>{ratio}</td></tr>"
         size_table = f"""
         <h2>{content['name']} Image Sizes</h2>
         <table class="size-table">
@@ -685,6 +722,10 @@ header nav{{display:flex;gap:24px}}header nav a{{color:#94A3B8;text-decoration:n
 .size-table{{width:100%;border-collapse:collapse;margin:20px 0}}
 .size-table th,.size-table td{{padding:12px 16px;border:1px solid var(--border);text-align:left;font-size:.9rem}}
 .size-table th{{background:var(--card-bg);font-weight:600}}
+.size-link{{color:var(--primary);text-decoration:none;font-weight:500;transition:all .15s}}
+.size-link:hover{{text-decoration:underline;color:var(--primary-dark)}}
+.size-link::after{{content:' →';opacity:0;transition:opacity .15s}}
+.size-link:hover::after{{opacity:1}}
 .faq-section{{padding:40px 0;text-align:left}}.faq-section h2{{font-size:1.5rem;margin-bottom:24px;text-align:center}}
 .faq-item{{margin-bottom:20px;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:20px}}
 .faq-item h3{{font-size:1rem;margin-bottom:8px;color:var(--primary)}}
